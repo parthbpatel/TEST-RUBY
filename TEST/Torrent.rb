@@ -7,11 +7,11 @@ class Powers
   end
 end
 
-class Choose_Category < Powers #polymorphism using inheritance.
-  include All_Categories
+class ChooseCategory < Powers #polymorphism using inheritance.
+  include AllCategories
 end
 
-class Show_Category
+class ShowCategory
   def choose_category
     all_category =
     {
@@ -35,7 +35,7 @@ class Show_Category
   end
 end
 
-Show_Category.new().choose_category #print category
+ShowCategory.new().choose_category #print category
 
 print "ENTER CATEGORY: "
 categories = gets.chomp
@@ -55,7 +55,7 @@ when "RGP"
   else
     puts "ENTER VALID PHASE"
   end
-  Choose_Category.new(unit, select_phase).residential_general_purpose(unit, select_phase)
+  ChooseCategory.new(unit, select_phase).residential_general_purpose(unit, select_phase)
 
 when "GLP"
   print "SINGLE PHASE or THREE PHASE: "
@@ -68,37 +68,37 @@ when "GLP"
   else
     puts "ENTER VALID PHASE"
   end
-  Choose_Category.new(unit, select_phase).general_lighting_purpose(unit, select_phase)
+  ChooseCategory.new(unit, select_phase).general_lighting_purpose(unit, select_phase)
 
 when "BPL"
-  Choose_Category.new(unit, select_phase).below_poverty_line(unit)
+  ChooseCategory.new(unit, select_phase).below_poverty_line(unit)
 
 when "NONRGP"
-  Choose_Category.new(unit, select_phase).commercial_industrial_purpose(unit)
+  ChooseCategory.new(unit, select_phase).commercial_industrial_purpose(unit)
 
 when "LTP"
-  Choose_Category.new(unit, select_phase).agriculture_service(unit)
+  ChooseCategory.new(unit, select_phase).agriculture_service(unit)
 
 when "LTMD1"
-  Choose_Category.new(unit, select_phase).low_tension_maximum_demand_1(unit)
+  ChooseCategory.new(unit, select_phase).low_tension_maximum_demand_1(unit)
 
 when "LTMD2"
-  Choose_Category.new(unit, select_phase).low_tension_maximum_demand_2(unit)
+  ChooseCategory.new(unit, select_phase).low_tension_maximum_demand_2(unit)
 
 when "SL"
-  Choose_Category.new(unit, select_phase).for_street_light(unit)
+  ChooseCategory.new(unit, select_phase).for_street_light(unit)
 
 when "TMP"
-  Choose_Category.new(unit, select_phase).low_tension_temporary_supply(unit)
+  ChooseCategory.new(unit, select_phase).low_tension_temporary_supply(unit)
 
 when "HTMD1"
-  Choose_Category.new(unit, select_phase).high_tension_maximum_demand_1(unit)
+  ChooseCategory.new(unit, select_phase).high_tension_maximum_demand_1(unit)
 
 when "HTMD2"
-  Choose_Category.new(unit, select_phase).high_tension_maximum_demand_2(unit)
+  ChooseCategory.new(unit, select_phase).high_tension_maximum_demand_2(unit)
 
 when "HTMD3"
-  Choose_Category.new(unit, select_phase).high_tension_maximum_demand_3(unit)
+  ChooseCategory.new(unit, select_phase).high_tension_maximum_demand_3(unit)
 else
   puts "ENTER VALID CATEGORY"
 end
