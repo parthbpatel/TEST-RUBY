@@ -1,4 +1,4 @@
-module All_Categories
+module AllCategories
   def residential_general_purpose(unit, select_phase)
     if unit <= 50
       payment = unit * 3.20 + select_phase
@@ -122,8 +122,8 @@ module All_Categories
     else
       tou_charge = unit
     end
-      payment = energy + fixed_charges + tou_charge
-      puts "TOTAL AMOUNT TO BE PAID: #{payment.round(2)}"
+    payment = energy + fixed_charges + tou_charge
+    puts "TOTAL AMOUNT TO BE PAID: #{payment.round(2)}"
   end
 
   def high_tension_maximum_demand_2(unit)
